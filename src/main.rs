@@ -7,15 +7,15 @@ extern crate piston;
 use piston::*;
 
 // === For Event system =======================================================
-pub use AddHolding = add_holding::AddHolding;
 pub use AddKeyboard = add_keyboard::AddKeyboard;
 pub use AddLasting = add_lasting::AddLasting;
 pub use AddPress = add_press::AddPress;
+pub use AddPressing = add_pressing::AddPressing;
 
 pub use Event = event::Event;
 pub use KeyboardEvent = keyboard_event::KeyboardEvent;
-pub use KeyboardHoldingEvent = keyboard_holding_event::KeyboardHoldingEvent;
-pub use KeyboardHoldingLastingEvent = keyboard_holding_lasting_event::KeyboardHoldingLastingEvent;
+pub use KeyboardPressingEvent = keyboard_pressing_event::KeyboardPressingEvent;
+pub use KeyboardPressingLastingEvent = keyboard_pressing_lasting_event::KeyboardPressingLastingEvent;
 pub use KeyboardPressEvent = keyboard_press_event::KeyboardPressEvent;
 
 pub use Map = map::Map;
@@ -25,15 +25,15 @@ pub use Observer = back_end::Observer;
 // ============================================================================
 
 // === For Event system =======================================================
-mod add_holding;
 mod add_keyboard;
 mod add_lasting;
 mod add_press;
+mod add_pressing;
 
 mod event;
 mod keyboard_event;
-mod keyboard_holding_event;
-mod keyboard_holding_lasting_event;
+mod keyboard_pressing_event;
+mod keyboard_pressing_lasting_event;
 mod keyboard_press_event;
 
 mod map;

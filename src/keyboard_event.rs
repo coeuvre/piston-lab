@@ -2,9 +2,9 @@
 use graphics::Value;
 use piston::keyboard;
 use {
-    AddHolding,
+    AddPressing,
     AddPress,
-    KeyboardHoldingEvent,
+    KeyboardPressingEvent,
     KeyboardPressEvent,
 };
 
@@ -18,9 +18,9 @@ impl<'a> AddPress<'a, KeyboardPressEvent<'a>> for KeyboardEvent<'a> {
     }
 }
 
-impl<'a> AddHolding<'a, KeyboardHoldingEvent<'a>> for KeyboardEvent<'a> {
-    fn holding(&self, key: keyboard::Key) -> KeyboardHoldingEvent<'a> {
-        KeyboardHoldingEvent {
+impl<'a> AddPressing<'a, KeyboardPressingEvent<'a>> for KeyboardEvent<'a> {
+    fn pressing(&self, key: keyboard::Key) -> KeyboardPressingEvent<'a> {
+        KeyboardPressingEvent {
             key: Value(key),
         }
     }

@@ -2,7 +2,7 @@
 use graphics::*;
 use piston::*;
 use {
-    AddHolding,
+    AddPressing,
     AddKeyboard,
     AddLasting,
     AddPress,
@@ -35,13 +35,13 @@ impl<'a> Game for App<'a> {
             println!("Oops! You pressed keyboard::Up");
         });
 
-        let e = self.e.keyboard().holding(keyboard::Up);
+        let e = self.e.keyboard().pressing(keyboard::Up);
         e.map(&mut self.back_end, || {
-            println!("Wow! You are holding keyboard::Up");
+            println!("Wow! You are pressing keyboard::Up");
         });
 
         e.lasting(1.0).map(&mut self.back_end, || {
-            println!("Wooooooow! You are holding keybaord::Up at least 1.0 second!!");
+            println!("Wooooooow! You are pressing keybaord::Up at least 1.0 second!!");
         });
     }
 
