@@ -18,6 +18,7 @@ pub struct KeyboardPressEvent<'a> {
 }
 
 impl<'a> Map<'a> for KeyboardPressEvent<'a> {
+    #[inline(always)]
     fn map<'a, B: BackEnd>(&self, back_end: &mut B, command: ||: 'a) -> uint {
         back_end.add_observer(box KeyboardPressEventObserver::new(command, *self.key.get()))
     }

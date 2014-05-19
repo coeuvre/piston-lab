@@ -2,10 +2,10 @@
 use graphics::*;
 use piston::*;
 use {
-    AddPressing,
     AddKeyboard,
     AddLasting,
     AddPress,
+    AddPressing,
 
     Event,
 

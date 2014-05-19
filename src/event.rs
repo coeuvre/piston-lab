@@ -13,6 +13,7 @@ impl<'a> Event<'a> {
 }
 
 impl<'a> AddKeyboard<'a, KeyboardEvent<'a>> for Event<'a> {
+    #[inline(always)]
     fn keyboard(&self) -> KeyboardEvent<'a> {
         KeyboardEvent
     }
