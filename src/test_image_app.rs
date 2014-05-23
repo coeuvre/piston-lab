@@ -16,11 +16,11 @@ impl App {
 
 impl Game for App {
     fn load(&mut self, asset_store: &mut AssetStore) {
-        self.image = Some(asset_store.load_image("char01.png"));
+        self.image = Some(asset_store.load_image("char01.png").unwrap());
     }
 
     fn render(&self, c: &Context, gl: &mut Gl) {
-        c.view().trans_local(100.0, 50.0).image(self.image.unwrap()).draw(gl);
+        c.image(self.image.unwrap()).draw(gl);
     }
 }
 

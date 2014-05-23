@@ -26,8 +26,8 @@ fn main() {
     let mut asset_store = AssetStore::from_folder("assets");
 
     //let mut app = test_mouse_move_event_app::App::new();
-    //let mut app = test_image_app::App::new();
-    let mut app = test_sub_image_app::App::new();
+    let mut app = test_image_app::App::new();
+    //let mut app = test_sub_image_app::App::new();
 
     app.run(&mut game_window, &mut asset_store);
 }
