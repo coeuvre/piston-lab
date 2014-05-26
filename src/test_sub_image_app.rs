@@ -19,7 +19,7 @@ impl Game for App {
         self.image = Some(asset_store.load_image("digits.png").unwrap());
     }
 
-    fn render(&self, c: &Context, gl: &mut Gl) {
+    fn render(&self, _ext_dt: f64, c: &Context, gl: &mut Gl) {
         let mut image = self.image.unwrap();
         image.source_rect[2] = 20;
         image.source_rect[3] = 26;
