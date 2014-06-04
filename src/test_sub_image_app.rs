@@ -3,7 +3,7 @@ use graphics::*;
 use piston::*;
 
 pub struct App {
-    image: Option<Image>,
+    image: Option<Texture>,
 }
 
 impl App {
@@ -16,14 +16,11 @@ impl App {
 
 impl Game for App {
     fn load(&mut self, asset_store: &mut AssetStore) {
-        self.image = Some(asset_store.load_image("digits.png").unwrap());
+        self.image = Some(Texture::from_path(&asset_store.path("digits.png").unwrap()).unwrap());
     }
 
     fn render(&self, _ext_dt: f64, c: &Context, gl: &mut Gl) {
-        let mut image = self.image.unwrap();
-        image.source_rect[2] = 20;
-        image.source_rect[3] = 26;
-        c.image(image).draw(gl);
+        c.rect(0.0, 0.0, 20.0, 26.0).image(self.image.get_ref()).src_rect(0, 0, 20, 26).draw(gl);
     }
 }
 
